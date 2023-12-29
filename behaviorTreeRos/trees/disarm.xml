@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="DisarmTree">
+    <Sequence name="disarm">
+      <Stabelize name="stabelize"/>
+      <Disarm name="disarm"/>
+    </Sequence>
+  </BehaviorTree>
+
+  <!-- Description of Node Models (used by Groot) -->
+  <TreeNodesModel>
+    <Action ID="Disarm"
+            editable="true"/>
+    <Action ID="Stabelize"
+            editable="true"/>
+  </TreeNodesModel>
+
+</root>

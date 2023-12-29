@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4" project_name="Project">
+    <include path="Hover.xml"/>
+    <include path="TakeOffTree.xml"/>
+    <!-- Description of Node Models (used by Groot) -->
+    <TreeNodesModel>
+        <Action ID="Arm" editable="true"/>
+        <Action ID="Disarm" editable="true"/>
+        <Action ID="Land" editable="true"/>
+        <Condition ID="Flying" editable="true">
+        </Condition>
+        <Condition ID="WpExist" editable="true"/>
+        <Condition ID="AtWP" editable="true"/>
+        <Action ID="GoToWp" editable="true"/>
+        <Action ID="OffBoard" editable="true"/>
+        <Action ID="SaftyLand" editable="true"/>
+        <Action ID="Stabelize" editable="true"/>
+        <Action ID="TakeOff" editable="true"/>
+    </TreeNodesModel>
+</root>

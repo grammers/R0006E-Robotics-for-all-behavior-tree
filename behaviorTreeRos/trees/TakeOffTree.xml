@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="TakeOffTree">
+    <Sequence name="arm">
+      <Arm name="arm"/>
+      <Delay delay_msec="2000">
+        <OffBoard name="off_board"/>
+      </Delay>
+      <TakeOff name="take_off"/>
+    </Sequence>
+  </BehaviorTree>
+
+  <!-- Description of Node Models (used by Groot) -->
+  <TreeNodesModel>
+    <Action ID="Arm"
+            editable="true"/>
+    <Action ID="OffBoard"
+            editable="true"/>
+    <Action ID="TakeOff"
+            editable="true"/>
+  </TreeNodesModel>
+
+</root>
