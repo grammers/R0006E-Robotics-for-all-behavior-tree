@@ -35,6 +35,20 @@ cd ..
     cd build
     cmake -DCMAKE_BUILD_TYPE=Release ..
     sudo make install
+cd ../../
+
+git clone https://github.com/BehaviorTree/BehaviorTree.CPP.git
+cd BehaviorTree.cpp
+mkdir build
+cd build
+sudo apt install libzmq3-dev libboost-coroutine-dev libncurses5-dev libncursesw5-dev 
+cmake ..
+make
+sudo make install
+
 cd ../../../
 
-sudo apt install ros-galactic-octomap*
+sudo apt install ros-galactic-octomap* ros-galactic-mavros-msgs*
+
+
+colcon build
