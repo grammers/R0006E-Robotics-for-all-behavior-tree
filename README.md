@@ -52,3 +52,37 @@ sudo apt install ros-galactic-octomap* ros-galactic-mavros-msgs*
 
 
 colcon build
+
+### install groot2
+at 
+https://www.behaviortree.dev/groot/
+Downlowd linux installer
+
+cd ~/Downloads/
+sudo chmod +x Groot2-v1.5.0-linux-installer.run
+
+## Run
+restatr the terminal and run
+ros2 launch robotics_for_all_BT_sim rviz_launch.py 
+
+New terminal run
+ros2 launch dsp dsp_PAC_launch.py 
+
+New terminal run
+ros2 launch dsp octomap_recorder_launch.py 
+
+new terminal run 
+ros2 run robotics_for_all_BT_sim drone_sim 
+./Groot2-v1.5.0-linux-installer.run 
+Follow instructions
+
+
+new terminal run
+ros2 run behavior_tree_ros behavior_tree_ros 
+
+new termiunal run
+ros2 launch behavior_tree_ros shafter_take_off_launcher.py
+
+Run Groot
+
+Load the prodject file located at /home/r0006e/colcon_ws/src/R0006E-Robotics-for-all-behavior-tree/behaviorTreeRos/trees
