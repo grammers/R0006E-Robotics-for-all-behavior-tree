@@ -121,5 +121,9 @@ Also, load the `behaviorTreeLab.xml` file (the file you should edit and hand in.
 Finally, load the `TakeOffTree.xml` and `disarm.xml` if you desire to use them as subtrees.
 
 
+To send waypoints use `Publish Point` found in the top bar in rviz. Press the `Publish point` once and then on a square in the map to send a waypoint 1m above the clicked point. Do not pres on the top of the map because it will send the drone to the outside of the map and that will cause issues.
+
 ## Nots
 If you install it on you're machine you will need to change a path in  `behaviorTreeRos/launch/shafter_take_off_launcher.py` on line 16 change tree_path to match the path on your machine.
+
+To stop a program running in a terminal press `CTRL+c`
