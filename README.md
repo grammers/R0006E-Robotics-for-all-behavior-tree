@@ -44,7 +44,7 @@ sudo make install
 cd ../../
 
 git clone https://github.com/BehaviorTree/BehaviorTree.CPP.git
-cd BehaviorTree.cpp
+cd BehaviorTree.CPP
 mkdir build
 cd build
 sudo apt install libzmq3-dev libboost-coroutine-dev libncurses5-dev libncursesw5-dev 
