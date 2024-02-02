@@ -24,7 +24,7 @@ cd src
 ```
 Clone the used packages
 ```
-git clone grammers/R0006E-Robotics-for-all-behavior-tree
+git clone https://github.com/grammers/R0006E-Robotics-for-all-behavior-tree.git
 
 git clone https://github.com/LTU-RAI/Dsp.git
 cd Dsp
