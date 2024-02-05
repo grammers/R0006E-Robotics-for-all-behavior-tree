@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root BTCPP_format="4" project_name="Project">
-    <include path="../../../../../behviorTree/src/behaviorTreerRos/trees/Hover.xml"/>
-    <include path="../../../../../behviorTree/src/behaviorTreerRos/trees/TakeOffTree.xml"/>
+    <include path="TakeOffTree.xml"/>
+    <include path="behaviorTreeLab.xml"/>
+    <include path="disarm.xml"/>
     <!-- Description of Node Models (used by Groot) -->
     <TreeNodesModel>
         <Action ID="Arm" editable="true"/>

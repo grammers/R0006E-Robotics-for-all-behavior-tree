@@ -51,6 +51,7 @@ install(TARGETS
 
 install(
     DIRECTORY launch
+    trees
     DESTINATION share/${PROJECT_NAME})
 
 
