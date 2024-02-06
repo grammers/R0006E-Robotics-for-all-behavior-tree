@@ -9,7 +9,7 @@ DroneSim::DroneSim() : Node("drone_sim"){
     land_srv = this->create_service<std_srvs::srv::Trigger>("drone/land",
         std::bind(&DroneSim::land, this, std::placeholders::_1, std::placeholders::_2)); 
 
-    path_srv = this->create_client<dsp_interfaces::srv::PathCost>("/grammers/dsp/path_cost");
+    path_srv = this->create_client<dsp_interfaces::srv::PathCost>("/dsp/path_cost");
 
     take_of_msg = this->create_subscription<std_msgs::msg::String>("drone/start", 1, 
         std::bind(&DroneSim::start_callback, this, std::placeholders::_1));
