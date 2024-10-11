@@ -46,7 +46,7 @@ void AtWP::init(std::shared_ptr<ShafterBT> shafter){
 }
 
 BT::NodeStatus AtWP::tick(){
-    if(m_shafter->at_wp()){
+    if(m_shafter->wp_reatced()){
         std::cout<<"at wp"<<std::endl;
         return BT::NodeStatus::SUCCESS;
     } else {
@@ -420,6 +420,7 @@ bool ShafterBT::at_wp(){
         std::pow(wp_list.poses[0].pose.position.y - odom.pose.pose.position.y, 2) +
         std::pow(wp_list.poses[0].pose.position.z - odom.pose.pose.position.z, 2)) < 1.0){
 
+        last_wp = wp_list.poses[0].pose.position;
 
         nav_msgs::msg::Path temp = wp_list;
         wp_list = nav_msgs::msg::Path();
@@ -433,6 +434,19 @@ bool ShafterBT::at_wp(){
     else {
         return false;
     }
+}
+
+bool ShafterBT::wp_reatced(){
+    if (std::sqrt(std::pow(last_wp.x - odom.pose.pose.position.x, 2) +
+        std::pow(last_wp.y - odom.pose.pose.position.y, 2) +
+        std::pow(last_wp.z - odom.pose.pose.position.z, 2)) < 1.0){
+
+        return true;
+    }
+    else {
+        return false;
+    }
+    
 }
 
 bool ShafterBT::wp_exist(){

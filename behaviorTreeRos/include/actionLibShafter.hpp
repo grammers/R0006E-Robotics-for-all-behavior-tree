@@ -7,6 +7,7 @@
 #include "nav_msgs/msg/path.hpp"
 #include "geometry_msgs/msg/point_stamped.hpp"
 #include "geometry_msgs/msg/pose_stamped.hpp"
+#include "geometry_msgs/msg/point.hpp"
 #include <chrono>
 #include <filesystem>
 #include <list>
@@ -46,6 +47,7 @@ public:
     bool fly_safe();
     void go_to_wp();
     bool at_wp();
+    bool wp_reatced();
     bool wp_exist();
 
 
@@ -86,6 +88,7 @@ private:
 
     nav_msgs::msg::Odometry odom = nav_msgs::msg::Odometry();
     nav_msgs::msg::Path wp_list = nav_msgs::msg::Path();
+    geometry_msgs::msg::Point last_wp = geometry_msgs::msg::Point();
 
 };
 
