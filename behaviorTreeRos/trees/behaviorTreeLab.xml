@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root BTCPP_format="4">
-  <BehaviorTree ID="behaviorTreeLab">
-    <AlwaysSuccess/>
-  </BehaviorTree>
-
-  <!-- Description of Node Models (used by Groot) -->
-  <TreeNodesModel/>
-
+<root>
+    <BehaviorTree ID="MainTree">
+        <Sequence>
+            <!-- Väntar på en waypoint -->
+            <Condition ID="HasWaypoint" />
+            
+            <!-- Starta TakeOff sekvensen -->
+            <SubTree ID="TakeOffTree" />
+            
+            <!-- Flyg till waypoint -->
+            <Sequence>
+                <Action ID="NavigateToWaypoint" />
+                
+                <!-- Hovra i 2 sekunder -->
+                <Action ID="Hover" delay="2000" />
+            </Sequence>
+            
+            <!-- Kolla om det finns fler waypoints -->
+            <Fallback>
+                <Sequence>
+                    <Condition ID="HasMoreWaypoints" />
+                    <Action ID="NavigateToWaypoint" />
+                </Sequence>
+                
+                <!-- Om inga fler waypoints, landa och avväpna -->
+                <Sequence>
+                    <Action ID="Land" />
+                    <SubTree ID="DisarmTree" />
+                </Sequence>
+            </Fallback>
+        </Sequence>
+    </BehaviorTree>
 </root>
