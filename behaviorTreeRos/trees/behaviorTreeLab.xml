@@ -1,10 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <root BTCPP_format="4">
-  <BehaviorTree ID="behaviorTreeLab">
-    <AlwaysSuccess/>
-  </BehaviorTree>
-
-  <!-- Description of Node Models (used by Groot) -->
-  <TreeNodesModel/>
-
+    <BehaviorTree ID="MainTree">
+        <Sequence>
+            <!-- Check if waypoint is received -->
+            <Condition ID="WaypointReceived"/>
+            
+            <!-- Takeoff sequence -->
+            <SubTree ID="TakeOffTree"/>
+            
+            <!-- Fly to Waypoint -->
+            <Action ID="FlyToWaypoint"/>
+            
+            <!-- Hover for 2 seconds -->
+            <Action ID="Hover"/>
+            
+            <!-- Check if more waypoints exist -->
+            <Fallback>
+                <Sequence>
+                    <Condition ID="MoreWaypoints"/>
+                    <Action ID="FlyToNextWaypoint"/>
+                </Sequence>
+                
+                <!-- If no more waypoints, land and disarm -->
+                <Sequence>
+                    <Action ID="Land"/>
+                    <SubTree ID="DisarmTree"/>
+                </Sequence>
+            </Fallback>
+        </Sequence>
+    </BehaviorTree>
 </root>
