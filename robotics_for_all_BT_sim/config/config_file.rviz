@@ -54,7 +54,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /octomap_full
+        Value: /ros/octomap_full
       Value: true
       Voxel Alpha: 1
       Voxel Coloring: Z-Axis
