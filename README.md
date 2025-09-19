@@ -28,7 +28,7 @@ git clone https://github.com/grammers/R0006E-Robotics-for-all-behavior-tree.git
 
 git clone https://github.com/LTU-RAI/Dsp.git
 cd Dsp
-git checkout ros2_msg
+git checkout r0006e
 cd ..
 ```
 
